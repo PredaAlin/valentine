@@ -5,10 +5,18 @@ import React, { useState, useEffect } from 'react';
 
 const Buttons = () => {
   const router = useRouter();
-  const [buttonStyle, setButtonStyle] = useState({
+  const defaultPosition = {
     position: 'relative',
     transition: 'all 0.3s ease-in-out',
-  });
+   
+
+  };
+
+  const [buttonStyle, setButtonStyle] = useState(
+    defaultPosition
+  );
+
+ 
 
   const changeButtonPosition = () => {
     const randomPosition = {
@@ -19,9 +27,6 @@ const Buttons = () => {
     };
 
     setButtonStyle(randomPosition);
-
-    // Commenting out the setTimeout since we want to change the position only when the button is clicked
-    // setTimeout(changeButtonPosition, 2000);
   };
 
   const goToSuccesPage = () => {
@@ -36,11 +41,10 @@ const Buttons = () => {
   };
 
   useEffect(() => {
-    // Start changing the position when the component mounts
-    changeButtonPosition();
+    // Reset the position when the component mounts
+    setButtonStyle(defaultPosition);
 
-    // Cleanup function to stop changing the position on component unmount
-    return () => clearTimeout();
+ 
   }, []); // Run only once on component mount
 
   return (
