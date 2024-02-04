@@ -10,7 +10,7 @@ const Success = () => {
       <div>
         <h1 className="bg-purple-500 rounded-lg text-5xl font-serif font-semibold p-3 shadow-xl text-center">
           {" "}
-         Te iubesc cel mai mult zanuta!!
+         Te iubesc cel mai mult zanuta!!!!!!!!!!
         </h1>
         <Heart image={kitty}></Heart>
        
